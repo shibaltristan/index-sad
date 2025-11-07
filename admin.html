@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin - Sta. Rita College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      :root{--primary:#0d6efd;--muted:#f5f7fb}
+      body{font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--muted);margin:0}
+      .app{min-height:100vh;display:flex}
+      .sidebar{width:230px;padding:22px;background:linear-gradient(180deg,var(--primary),#1454d0);color:#fff}
+      .sidebar .logo{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+      .sidebar .nav-link{color:rgba(255,255,255,0.95);font-weight:600;padding:8px;border-radius:8px}
+      .sidebar .nav-link:hover{background:rgba(255,255,255,0.06)}
+      .main{flex:1;padding:28px}
+      .card-action{border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+      footer{color:#666;text-align:center;margin-top:28px}
+      @media (max-width:767px){.sidebar{display:none}}
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="srclogo.webp" alt="logo" style="width:56px;border-radius:50%;border:2px solid rgba(255,255,255,0.18)">
+          <div>
+            <div style="font-weight:800">Sta. Rita College</div>
+            <small style="opacity:0.95">Admin Dashboard</small>
+          </div>
+        </div>
+        <nav class="nav flex-column">
+          <a class="nav-link mb-1" href="addcandidate.html">➕ Add Candidate</a>
+          <a class="nav-link mb-1" href="removecandidate.html">➖ Remove Candidate</a>
+          <a class="nav-link mb-1" href="results.html">📊 View Results</a>
+          <a class="nav-link mt-3" href="adminlogin.html">🔒 Log out</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="mb-0">Admin Dashboard</h2>
+            <small class="text-muted">Manage candidates and view election results</small>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div class="text-end">
+              <div style="font-weight:700">Tristan Duque</div>
+              <small class="text-muted">Administrator</small>
+            </div>
+            <img src="Justine1.jpg" alt="avatar" style="width:48px;height:48px;border-radius:8px;object-fit:cover">
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-lg-4">
+            <div class="card card-action p-3">
+              <h5 class="mb-1">Candidates</h5>
+              <p class="text-muted">Add or remove candidates for the upcoming election.</p>
+              <div class="d-flex gap-2">
+                <a href="addcandidate.html" class="btn btn-primary btn-sm">Add Candidate</a>
+                <a href="removecandidate.html" class="btn btn-outline-primary btn-sm">Remove Candidate</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card card-action p-3">
+              <h5 class="mb-1">Results</h5>
+              <p class="text-muted">View election results and export reports.</p>
+              <a href="results.html" class="btn btn-success btn-sm">View Results</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card card-action p-3">
+              <h5 class="mb-1">Quick Actions</h5>
+              <p class="text-muted">Common admin actions in one place.</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="addcandidate.html" class="btn btn-outline-secondary btn-sm">New Candidate</a>
+                <a href="removecandidate.html" class="btn btn-outline-secondary btn-sm">Remove</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          2025 Sta. Rita College • Developed by Tristan L. Duque
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

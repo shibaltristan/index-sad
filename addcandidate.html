@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Add Candidate</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background: #f4f7fc;
+                background-image: url('srcbackround.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+  }
+  .sidebar {
+    width: 220px;
+    background: #2f80ed;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  .sidebar a {
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-left: 4px solid transparent;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .sidebar a:hover, .sidebar a.active {
+    background: #1c5ed6;
+    border-left: 4px solid #fff;
+  }
+
+  .main {
+    flex: 1;
+    padding: 30px;
+  }
+  header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  form {
+    background: white;
+    padding: 20px 30px;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  }
+  form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  form input {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  form button {
+    margin-top: 20px;
+    background: #2f80ed;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  form button:hover {
+    background: #1c5ed6;
+  }
+</style>
+</head>
+<body>
+</div>
+
+<div class="main">
+  <header>Add Candidate</header>
+  <form>
+    <img src="srclogo.webp" alt="School Logo" class="rounded-circle mb-3" style="max-width: 80px; border: 3px solid white;">
+    <label for="name">Candidate Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter full name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter email" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required />
+
+    <label for="enrollment">Enrollment ID</label>
+    <input type="text" id="enrollment" name="enrollment" placeholder="Enter enrollment ID" required />
+
+    <button type="submit">Add Candidate</button>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - School Voting System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-image: url('srcbackround.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color:white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5 text-center">
+        <div class="login-container d-inline-block text-start" style="max-width: 300px; width: 100%;">
+            <img src="srclogo.webp" alt="School Logo" style="max-width: 150px; margin-bottom: 20px;"
+            class="mx-auto d-block">
+            <h2 class="text-center">Registration</h2>
+
+            <form action="login.html" method="get">
+            <label for="ID NUMBER"required></label>
+            <input type="ID NUMBER" name="Email" class="form-control"  placeholder="Enter your ID Number:" required>
+            <label for="Email"required></label>
+            <input type="Email" name="Email" class="form-control"  placeholder="Enter your Email:" required>
+            <label for="Username"required></label>
+            <input type="Text" name="Username" class="form-control"  placeholder="Enter your Username:"required>
+            <label for="Password"required></label>
+            <input type="Password" name="Password" class="form-control"  placeholder="Enter your Password:"required>
+            <label for="Password"required></label>
+            <input type="Password" name="Password" class="form-control"  placeholder="Confirm password:"required><br>
+            </form>
+
+            <a href="index.html"><submit" class="btn btn-primary w-100">Register</button> </a>
+            <p class="text-center">Already have an account?<br> <a href="login.html">Login here</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
