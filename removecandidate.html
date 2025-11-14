@@ -8,13 +8,60 @@
     <style>
       body{font-family:Inter,system-ui,Arial;background:#f4f7fc;margin:0;padding:22px}
       .layout{display:flex;gap:20px;align-items:flex-start}
-      .sidebar{width:220px;padding:18px;background:linear-gradient(180deg,#0d6efd,#1454d0);color:#fff;border-radius:12px}
-      .sidebar .nav-link{color:#fff;padding:8px;border-radius:8px;font-weight:600}
-      .sidebar .nav-link:hover{background:rgba(255,255,255,0.06)}
+
+      .sidebar{
+        width:220px;padding:18px;
+        background:linear-gradient(180deg,#0d6efd,#1454d0);
+        color:#fff;border-radius:12px
+      }
+      .sidebar .nav-link{
+        color:#fff;padding:8px;
+        border-radius:8px;font-weight:600
+      }
+      .sidebar .nav-link:hover{
+        background:rgba(255,255,255,0.06)
+      }
       .content{flex:1}
       .card{border-radius:12px}
+
+      /* 🔵 Enhanced Select Design */
+      .modern-select{
+        position:relative;
+      }
+      .modern-select select{
+        appearance:none;
+        width:100%;
+        padding:12px 16px;
+        border-radius:10px;
+        border:2px solid #d3d9f0;
+        background:#fff;
+        font-size:15px;
+        font-weight:500;
+        transition:0.25s ease;
+      }
+      .modern-select select:focus{
+        border-color:#0d6efd;
+        box-shadow:0 0 0 4px rgba(13,110,253,0.15);
+        outline:none;
+      }
+      .modern-select:hover select{
+        border-color:#0d6efd;
+      }
+
+      /* Dropdown arrow icon */
+      .modern-select::after{
+        content:"▼";
+        position:absolute;
+        right:14px;
+        top:50%;
+        transform:translateY(-50%);
+        color:#0d6efd;
+        pointer-events:none;
+        font-size:12px;
+      }
     </style>
   </head>
+
   <body>
     <div class="layout container-lg">
       <aside class="sidebar">
@@ -26,19 +73,20 @@
           </div>
         </div>
         <nav class="nav flex-column">
-          <a class="nav-link mb-1" href="addcandidate.html">➕ Add Candidate</a>
-          <a class="nav-link mb-1 active" href="removecandidate.html">➖ Remove Candidate</a>
-          <a class="nav-link mb-1" href="results.html">📊 View Results</a>
-          <a class="nav-link" href="adminlogin.html">🔒 Log out</a>
+          <a class="nav-link mb-1" href="addcandidate.html"> Add Candidate</a>
+          <a class="nav-link mb-1 active" href="removecandidate.html"> Remove Candidate</a>
+          <a class="nav-link mb-1" href="results.html"> View Results</a>
+          <a class="nav-link" href="adminlogin.html"> Log out</a>
         </nav>
       </aside>
 
       <main class="content">
         <div class="card p-4">
           <h4 class="mb-3">Remove Candidate</h4>
-          <p class="text-muted">Provide the candidate details to remove them from the ballot. This is a demo form — connect to your backend to perform deletion.</p>
+          <p class="text-muted">Provide the candidate details to remove them from the ballot.</p>
 
           <form id="remove-form" class="row g-3">
+
             <div class="col-md-6">
               <label class="form-label" for="name">Candidate Name</label>
               <input class="form-control" id="name" name="name" placeholder="Full name" required>
@@ -59,22 +107,34 @@
               <input class="form-control" id="phone" type="tel" name="phone" placeholder="Phone number">
             </div>
 
+            <!-- ⭐ Upgraded Select Dropdown -->
+            <div class="col-md-12">
+              <label class="form-label">Department</label>
+              <div class="modern-select">
+                <select id="department">
+                  <option value="Integrated">Integrated High School Department</option>
+                  <option value="College">College Department</option>
+                </select>
+              </div>
+            </div>
+
             <div class="col-12">
               <button class="btn btn-danger" type="submit">Remove Candidate</button>
               <a href="admin.html" class="btn btn-outline-secondary ms-2">Cancel</a>
             </div>
+
           </form>
         </div>
       </main>
     </div>
 
     <script>
-      // Front-end demo behavior: prevent actual submit and show a simple confirmation.
       document.getElementById('remove-form').addEventListener('submit', function(e){
         e.preventDefault();
         const name = document.getElementById('name').value || '(no name)';
-        alert('Candidate "' + name + '" would be removed (demo). Connect this form to your backend to perform real removal.');
+        alert('Candidate "' + name + '" would be removed (demo). Connect to backend for real deletion.');
       });
     </script>
+
   </body>
 </html>

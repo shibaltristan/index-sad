@@ -49,13 +49,18 @@
         <div id="vp-list"></div>
       </div>
 
+      <!-- ✅ Secretary Section Added -->
+      <div class="mt-4 card p-4">
+        <h5 class="mb-3">Secretary</h5>
+        <div id="Secretary-list"></div>
+      </div>
+
       <footer>
         2025 Sta. Rita College • Developed by Tristan L. Duque
       </footer>
     </div>
 
     <script>
-      // Example data — replace with dynamic data when available
       const president = [
         { name: 'Justine', votes: 75 },
         { name: 'Shin', votes: 120 },
@@ -66,6 +71,12 @@
         { name: 'Meong', votes: 140 },
         { name: 'Jessica', votes: 80 },
         { name: 'Nicole', votes: 60 }
+      ];
+
+      const Secretary = [
+        { name: 'Kim', votes: 110 },
+        { name: 'Francis ', votes: 90 },
+        { name: 'Angeles', votes: 70 }
       ];
 
       function renderList(containerId, items){
@@ -88,15 +99,16 @@
         return total;
       }
 
-      // Render and animate fills after DOM
       document.addEventListener('DOMContentLoaded', ()=>{
         const totalPres = renderList('president-list', president);
         const totalVp = renderList('vp-list', vice);
-        document.getElementById('total-voters').textContent = totalPres + totalVp;
-        // trigger transition (fills already have width inline) — small timeout keeps animation
+        const totalSecretary = renderList('Secretary-list', Secretary);
+
+        document.getElementById('total-voters').textContent =
+          totalPres + totalVp + totalSecretary;
+
         requestAnimationFrame(()=>{
           document.querySelectorAll('.fill').forEach(el=>{
-            // reflow then keep as-is to animate
             const w = el.style.width;
             el.style.width = '0%';
             setTimeout(()=>el.style.width = w, 30);
@@ -106,6 +118,3 @@
     </script>
   </body>
 </html>
-        ]
-
-     </script>
