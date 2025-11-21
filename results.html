@@ -13,6 +13,8 @@
       .candidate-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
       footer{color:#666;margin-top:26px;text-align:center}
       .logo{width:64px;border-radius:12px}
+      .winner-name { color: #06b6d4; font-size: 1.1em; }
+      .department-header { border-bottom: 2px solid #2563eb; padding-bottom: 5px; margin-bottom: 15px; }
     </style>
   </head>
   <body>
@@ -26,33 +28,46 @@
       </div>
 
       <div class="row g-3">
-        <div class="col-lg-8">
-          <div class="card p-4">
+        
+        <div class="col-lg-4">
+          <div class="card p-4 h-100">
+            <h4 class="department-header">High School Department </h4>
             <h5 class="mb-3">President</h5>
-            <div id="president-list"></div>
+            <div id="hs-president-list" class="mb-4"></div>
+            <h5 class="mb-3">Vice President</h5>
+            <div id="hs-vp-list" class="mb-4"></div>
+            <h5 class="mb-3">Secretary</h5>
+            <div id="hs-secretary-list"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card p-4 h-100">
+            <h4 class="department-header">College Department </h4>
+            <h5 class="mb-3">President</h5>
+            <div id="college-president-list" class="mb-4"></div>
+            <h5 class="mb-3">Vice President</h5>
+            <div id="college-vp-list" class="mb-4"></div>
+            <h5 class="mb-3">Secretary</h5>
+            <div id="college-secretary-list"></div>
           </div>
         </div>
 
         <div class="col-lg-4">
           <div class="card p-4">
-            <h5 class="mb-3">Summary</h5>
-            <p class="mb-1 text-muted">Total voters counted</p>
-            <h2 id="total-voters">0</h2>
+            <h5 class="mb-3">Total Summary</h5>
+            <p class="mb-1 text-muted">High School Department Voters</p>
+            <h2 id="total-voters-hs">0</h2>
             <hr>
-            <a href="admin.html" class="btn btn-outline-primary btn-sm">Back to Admin</a>
+            <p class="mb-1 text-muted">College Department Voters</p>
+            <h2 id="total-voters-college">0</h2>
+            <hr>
+            <p class="mb-1 text-muted">GRAND TOTAL</p>
+            <h2 id="total-voters-grand">0</h2>
+            <hr>
+            <a href="admin.html" class="btn btn-outline-primary w-100">Back to Admin Panel</a>
           </div>
         </div>
-      </div>
-
-      <div class="mt-4 card p-4">
-        <h5 class="mb-3">Vice President</h5>
-        <div id="vp-list"></div>
-      </div>
-
-      <!-- ✅ Secretary Section Added -->
-      <div class="mt-4 card p-4">
-        <h5 class="mb-3">Secretary</h5>
-        <div id="Secretary-list"></div>
       </div>
 
       <footer>
@@ -61,51 +76,93 @@
     </div>
 
     <script>
-      const president = [
-        { name: 'Justine', votes: 75 },
-        { name: 'Shin', votes: 120 },
-        { name: 'John Paul', votes: 95 }
+
+      const hsPresident = [
+        { name: 'Francis Alave', votes: 75 },
+        { name: 'Shin Bartcillo', votes: 120 },
+        { name: 'John Paul Santos', votes: 95 }
       ];
 
-      const vice = [
-        { name: 'Meong', votes: 140 },
-        { name: 'Jessica', votes: 80 },
-        { name: 'Nicole', votes: 60 }
+      const hsVice = [
+        { name: 'Meong Kim', votes: 140 },
+        { name: 'Jessica Salalila', votes: 80 },
+        { name: 'Nicole Sambile', votes: 60 }
       ];
 
-      const Secretary = [
-        { name: 'Kim', votes: 110 },
-        { name: 'Francis ', votes: 90 },
-        { name: 'Angeles', votes: 70 }
+      const hsSecretary = [
+        { name: 'Kim Peralta', votes: 110 },
+        { name: 'Francis Lopez', votes: 90 },
+        { name: 'Angeles Justine', votes: 70 }
       ];
+
+
+      const collegePresident = [
+        { name: 'Benedict P..', votes: 210 },
+        { name: 'Iya G.', votes: 190 },
+        { name: 'Jerald R.', votes: 150 }
+      ];
+
+      const collegeVice = [
+        { name: 'Batas D.', votes: 250 },
+        { name: 'Dimaguiba B.', votes: 180 },
+        { name: 'Tanggol L.', votes: 120 }
+      ];
+
+      const collegeSecretary = [
+        { name: 'Ramon P.', votes: 190 },
+        { name: 'Miguelito S.', votes: 220 },
+        { name: 'Aljur M.', votes: 140 }
+      ];
+
 
       function renderList(containerId, items){
         const container = document.getElementById(containerId);
         container.innerHTML = '';
+        
+        items.sort((a, b) => b.votes - a.votes);
         const total = items.reduce((s,i)=>s+i.votes,0) || 1;
-        items.forEach(i=>{
+        
+        items.forEach((i, index)=>{
           const percent = Math.round(i.votes / total * 100);
+          const isWinner = index === 0;
+
           const row = document.createElement('div');
           row.className = 'candidate-row';
           row.innerHTML = `
             <div style="flex:1">
-              <div style="font-weight:700">${i.name}</div>
+              <div class="fw-bold ${isWinner ? 'winner-name' : ''}">${i.name} ${isWinner ? '' : ''}</div> 
               <div class="bar mt-2"><div class="fill" style="width:${percent}%"></div></div>
             </div>
-            <div style="width:88px;text-align:right"><div style="font-weight:700">${i.votes}</div><div class="text-muted" style="font-size:12px">${percent}%</div></div>
+            <div style="width:88px;text-align:right">
+                <div class="fw-bold ${isWinner ? 'winner-name' : ''}">${i.votes}</div>
+                <div class="text-muted" style="font-size:12px">${percent}%</div>
+            </div>
           `;
           container.appendChild(row);
         });
         return total;
       }
 
-      document.addEventListener('DOMContentLoaded', ()=>{
-        const totalPres = renderList('president-list', president);
-        const totalVp = renderList('vp-list', vice);
-        const totalSecretary = renderList('Secretary-list', Secretary);
 
-        document.getElementById('total-voters').textContent =
-          totalPres + totalVp + totalSecretary;
+      document.addEventListener('DOMContentLoaded', ()=>{
+        
+        const totalHSPres = renderList('hs-president-list', hsPresident);
+        renderList('hs-vp-list', hsVice);
+        renderList('hs-secretary-list', hsSecretary);
+
+        const totalCollegePres = renderList('college-president-list', collegePresident);
+        renderList('college-vp-list', collegeVice);
+        renderList('college-secretary-list', collegeSecretary);
+
+
+        document.getElementById('total-voters-hs').textContent = totalHSPres;
+        
+    
+        document.getElementById('total-voters-college').textContent = totalCollegePres;
+        
+
+        document.getElementById('total-voters-grand').textContent = totalHSPres + totalCollegePres;
+
 
         requestAnimationFrame(()=>{
           document.querySelectorAll('.fill').forEach(el=>{

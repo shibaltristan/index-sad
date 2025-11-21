@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>High School Login - Sta. Rita College Voting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            /* Flexbox for perfect centering */
+            background-image: url('srcbackround.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .login-card {
+            /* Renamed container for clarity and increased padding */
+            background-color: #fff;
+            border-radius: 12px; 
+            overflow: hidden; /* To contain the header background */
+            /* New shadow with a subtle blue tint */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(6, 182, 212, 0.1); 
+            max-width: 400px; /* Wider for a bolder look */
+        }
+
+        .card-header-custom {
+            /* Background color matching a modern blue/cyan gradient idea */
+            background: linear-gradient(135deg, #2563eb, #06b6d4); 
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .form-section {
+            padding: 25px 30px 20px 30px; /* Padding for the form area */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"> 
+        <div class="login-card mx-auto">
+            
+            <div class="card-header-custom">
+                <img src="srclogo.webp" alt="School Logo" style="max-width: 80px; margin-bottom: 10px;"
+                    class="d-block mx-auto rounded-circle border border-3 border-white">
+                <h4 class="mb-0 fw-light">Welcome to Sta. Rita College</h4>
+                <h3 class="fw-bold mb-0">HIGH SCHOOL DEPARTMENT</h3> 
+            </div>
+            
+            <div class="form-section">
+                <h5 class="text-center mb-4 text-muted">Please sign in to vote</h5>
+
+                <form action="hs_login_handler.php" method="post">
+                    
+                    <div class="mb-3">
+                        <label for="usernameInput" class="form-label visually-hidden">Username</label>
+                        <input type="text" id="usernameInput" name="username" class="form-control form-control-lg" 
+                            placeholder="Enter Student ID / Username" required/>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="passwordInput" class="form-label visually-hidden">Password</label>
+                        <input type="password" id="passwordInput" name="password" class="form-control form-control-lg" 
+                            placeholder="Enter Password" required/>
+                    </div>
+                    
+                    <a href="HomeIntegratedHigh.html" class="btn btn-primary w-100 mt-2 btn-lg shadow">Login</a>
+                    
+                </form>
+
+                <p class="text-center mt-4 mb-1 small">
+                    <span class="text-muted">Don't have an account?</span><br> 
+                    <a href="register.html" class="fw-bold">Register here</a>
+                </p>
+                <p class="text-center mb-0 small">
+                    <span class="text-muted">Need help?</span><br> 
+                    <a href="changepass.html">Recover Password</a>
+                </p>
+
+                <hr class="my-3">
+                <p class="text-center mb-0">
+                    <a href="index.html" class="btn btn-outline-secondary w-100 btn-sm">
+                        ⬅️ Change Department
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
