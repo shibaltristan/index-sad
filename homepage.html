@@ -6,19 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sta. Rita College Elections - Vote Now</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <style>
         body {
-            background-color: white;
-            font-family:Georgia, 'Times New Roman', Times, serif;
+            background-color: #f8f9fa;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-
         .header-bg {
-            background-color: blue; 
+            background: linear-gradient(90deg, #2563eb, #06b6d4);
             color: white;
-            padding: 20px 0;
+            padding: 25px 0;
             margin-bottom: 40px;
-            border-bottom: 5px solid blue;
+            text-align: center;
+            border-bottom: 5px solid #1d4ed8;
+        }
+
+        .header-bg img {
+            max-width: 80px;
+            border: 3px solid white;
+        }
+
+        .header-bg h1,
+        .header-bg p {
+            margin: 5px 0;
+        }
+
+        .position-section h3 {
+            color: #374151;
+            margin-bottom: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #facc15;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .candidate-card {
@@ -26,9 +46,9 @@
             transition: all 0.3s ease-in-out;
             background-color: white;
             border: 1px solid #dee2e6;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 4px 10px black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             min-height: 420px;
             display: flex;
             flex-direction: column;
@@ -36,14 +56,14 @@
         }
 
         .candidate-card:hover {
-            box-shadow: 0 6px 15px black;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
             transform: translateY(-2px);
         }
 
         .candidate-card.selected {
-            border-color: lightgreen;
-            box-shadow: 0 0 15px rgb(9, 4, 255);
-            background-color: #e9fbe9;
+            border-color: #10b981;
+            box-shadow: 0 0 15px #3b82f6;
+            background-color: #e6f9f0;
         }
 
         .candidate-photo {
@@ -55,95 +75,82 @@
             border: 3px solid white;
         }
 
-        .position-section h3 {
-            color: gray;
-            margin-bottom: 1.5rem;
-            padding-bottom: 10px;
-            border-bottom: 3px solid yellow;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .form-check-input:checked ~ .form-check-label::before {
-            content: ' Korek ';
-            color: green;
-            font-weight: bold;
-        }
-        
         .form-check-input {
-            opacity: 0;
-            position: absolute;
+            display: none;
         }
 
         .form-check-label {
             font-size: 1.1rem;
             font-weight: 600;
-            color: blue;
-            display: block;
+            color: #2563eb;
             text-align: center;
+            display: block;
+            cursor: pointer;
+            padding: 5px;
         }
 
+        .btn-submit {
+            padding: 12px 30px;
+            font-size: 1.25rem;
+        }
+
+        .cancel-link {
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 
 <body>
-    <div class="header-bg text-center">
-        <div class="container">
-            <img src="srclogo.webp" alt="School Logo" class="rounded-circle mb-3" style="max-width: 80px; border: 3px solid white;">
-            <h1 class="mb-1">Sta. Rita College Student Elections</h1>
-            <p class="lead">Good luck And Choose your best Candidate.</p>
-            <p class="lead">College Department.</p>
-            <h1 class="lead">Vote Wisely!!!</h1>
-        </div>
+
+    <div class="header-bg">
+        <img src="srclogo.webp" alt="School Logo" class="rounded-circle mb-3">
+        <h1>Sta. Rita College Student Elections</h1>
+        <p class="lead mb-1">Good luck and choose your best candidate</p>
+        <p class="lead mb-1">College Department</p>
+        <h2 class="lead">Vote Wisely!</h2>
     </div>
 
-    <div class="container">
+    <div class="container mb-5">
         <form action="logout.html" method="get">
-
             <div class="position-section mb-5">
                 <h3 class="text-center">President</h3>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="presidentA">
+                        <div class="candidate-card" data-category="president">
                             <div>
                                 <img src="Shin.jpg" alt="Bartocillo Shin" class="candidate-photo" />
                                 <h4 class="text-primary">Bartocillo Shin <small class="text-muted">(Cat)</small></h4>
-                                <p class="text-muted">Dedicated leader with a passion for student engagement and school improvement.</p>
+                                <p class="text-muted">Dedicated leader passionate about student engagement and school improvement.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="president" id="presidentA"
-                                    value="Candidate A" required />
-                                <label class="form-check-label" for="presidentA">Vote for Shin</label>
+                                <input class="form-check-input" type="radio" name="president" id="presidentA" value="Bartocillo Shin" required>
+                                <label class="form-check-label" for="presidentA">Vote</label>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="presidentB">
+                        <div class="candidate-card" data-category="president">
                             <div>
-                                <img src="Justine1.jpg" alt="Candidate B" class="candidate-photo" />
-                                <h4 class="text-primary">Justine Pituc<small class="text-muted"> (Raccoon)</small></h4>
-                                <p class="text-muted">Committed to making school activities more fun and inclusive for everyone.</p>
+                                <img src="Justine1.jpg" alt="Justine Pituc" class="candidate-photo" />
+                                <h4 class="text-primary">Justine Pituc <small class="text-muted">(Raccoon)</small></h4>
+                                <p class="text-muted">Committed to making school activities fun and inclusive.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="president" id="presidentB"
-                                    value="Candidate B" />
-                                <label class="form-check-label" for="presidentB">Vote for Justine Pituc</label>
+                                <input class="form-check-input" type="radio" name="president" id="presidentB" value="Justine Pituc">
+                                <label class="form-check-label" for="presidentB">Vote</label>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="presidentC">
+                        <div class="candidate-card" data-category="president">
                             <div>
-                                <img src="Angeles1.jpg" alt="Candidate C" class="candidate-photo" />
-                                <h4 class="text-primary">Justine Angeles<small class="text-muted"> (Doggy)</small></h4>
+                                <img src="Angeles1.jpg" alt="Justine Angeles" class="candidate-photo" />
+                                <h4 class="text-primary">Justine Angeles <small class="text-muted">(Doggy)</small></h4>
                                 <p class="text-muted">Focused on innovative ideas and student welfare.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="president" id="presidentC"
-                                    value="Candidate C" />
-                                <label class="form-check-label" for="presidentC">Vote for Candidate C</label>
+                                <input class="form-check-input" type="radio" name="president" id="presidentC" value="Justine Angeles">
+                                <label class="form-check-label" for="presidentC">Vote</label>
                             </div>
                         </div>
                     </div>
@@ -154,113 +161,119 @@
                 <h3 class="text-center">Vice President</h3>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="vpA">
+                        <div class="candidate-card" data-category="vice_president">
                             <div>
-                                <img src="Francis.jpg" alt="Candidate D" class="candidate-photo" />
-                                <h4 class="text-primary">Francis Alave<small class="text-muted"> (Panther)</small></h4>
+                                <img src="Francis.jpg" alt="Francis Alave" class="candidate-photo" />
+                                <h4 class="text-primary">Francis Alave <small class="text-muted">(Panther)</small></h4>
                                 <p class="text-muted">Experienced in organizing student activities and fostering teamwork.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="vice_president" id="vpA" value="Candidate D"
-                                    required />
-                                <label class="form-check-label" for="vpA">Vote for Candidate D</label>
+                                <input class="form-check-input" type="radio" name="vice_president" id="vpA" value="Francis Alave" required>
+                                <label class="form-check-label" for="vpA">Vote</label>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="vpB">
+                        <div class="candidate-card" data-category="vice_president">
                             <div>
-                                <img src="kim.jpg" alt="Candidate E" class="candidate-photo" />
-                                <h4 class="text-primary">Kim Peralta<small class="text-muted"> (Tiger)</small></h4>
+                                <img src="kim.jpg" alt="Kim Peralta" class="candidate-photo" />
+                                <h4 class="text-primary">Kim Peralta <small class="text-muted">(Tiger)</small></h4>
                                 <p class="text-muted">Passionate about improving school resources and student welfare.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="vice_president" id="vpB"
-                                    value="Candidate E" />
-                                <label class="form-check-label" for="vpB">Vote for Candidate E</label>
+                                <input class="form-check-input" type="radio" name="vice_president" id="vpB" value="Kim Peralta">
+                                <label class="form-check-label" for="vpB">Vote</label>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="vpC">
+                        <div class="candidate-card" data-category="vice_president">
                             <div>
-                                <img src="nicole.jpg" alt="Candidate F" class="candidate-photo" />
-                                <h4 class="text-primary">Nicole Sambile<small class="text-muted"> (Parrot)</small></h4>
+                                <img src="nicole.jpg" alt="Nicole Sambile" class="candidate-photo" />
+                                <h4 class="text-primary">Nicole Sambile <small class="text-muted">(Parrot)</small></h4>
                                 <p class="text-muted">Determined to promote student involvement and community service.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="vice_president" id="vpC"
-                                    value="Candidate F" />
-                                <label class="form-check-label" for="vpC">Vote for Candidate F</label>
+                                <input class="form-check-input" type="radio" name="vice_president" id="vpC" value="Nicole Sambile">
+                                <label class="form-check-label" for="vpC">Vote</label>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="position-section mb-5">
                 <h3 class="text-center">Secretary</h3>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="secA">
+                        <div class="candidate-card" data-category="secretary">
                             <div>
-                                <img src="John.jpg" alt="Candidate G" class="candidate-photo" />
-                                <h4 class="text-primary">John Paul Arcilla<small class="text-muted"> (Elephant)</small></h4>
+                                <img src="John.jpg" alt="John Paul Arcilla" class="candidate-photo" />
+                                <h4 class="text-primary">John Paul Arcilla <small class="text-muted">(Elephant)</small></h4>
                                 <p class="text-muted">Skilled in communication and event planning.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="secretary" id="secA" value="Candidate G"
-                                    required />
-                                <label class="form-check-label" for="secA">Vote for Candidate G</label>
+                                <input class="form-check-input" type="radio" name="secretary" id="secA" value="John Paul Arcilla" required>
+                                <label class="form-check-label" for="secA">Vote</label>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="secB">
+                        <div class="candidate-card" data-category="secretary">
                             <div>
-                                <img src="Meong.webp" alt="Candidate H" class="candidate-photo" />
-                                <h4 class="text-primary">Arjay Del Castillo<small class="text-muted"> (Meong The Lipbite)</small></h4>
+                                <img src="Meong.webp" alt="Arjay Del Castillo" class="candidate-photo" />
+                                <h4 class="text-primary">Arjay Del Castillo <small class="text-muted">(Meong The Lipbite)</small></h4>
                                 <p class="text-muted">Committed to keeping accurate records and supporting the team.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="secretary" id="secB" value="Candidate H" />
-                                <label class="form-check-label" for="secB">Vote for Candidate H</label>
+                                <input class="form-check-input" type="radio" name="secretary" id="secB" value="Arjay Del Castillo">
+                                <label class="form-check-label" for="secB">Vote</label>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="candidate-card" data-candidate-id="secC">
+                        <div class="candidate-card" data-category="secretary">
                             <div>
-                                <img src="Joey.jpg" alt="Candidate I" class="candidate-photo" />
-                                <h4 class="text-primary">Joey Aparejado<small class="text-muted"> (Rabbit)</small></h4>
+                                <img src="Joey.jpg" alt="Joey Aparejado" class="candidate-photo" />
+                                <h4 class="text-primary">Joey Aparejado <small class="text-muted">(Rabbit)</small></h4>
                                 <p class="text-muted">Detail-oriented with strong organizational skills.</p>
                             </div>
                             <div class="form-check mt-auto">
-                                <input class="form-check-input" type="radio" name="secretary" id="secC" value="Candidate I" />
-                                <label class="form-check-label" for="secC">Vote for Candidate I</label>
+                                <input class="form-check-input" type="radio" name="secretary" id="secC" value="Joey Aparejado">
+                                <label class="form-check-label" for="secC">Vote</label>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center py-5">
-                <button type="submit" class="btn btn-success btn-lg px-5 py-3 shadow-lg">
-                    Submit Final Vote
-                </button>
+
+            <div class="text-center py-4">
+                <button type="submit" class="btn btn-success btn-lg btn-submit shadow-lg">Submit Final Vote</button>
             </div>
-            
             <div class="text-center mt-3 mb-5">
-                <a href="canceled.html" class="btn btn-link text-danger">Cancel Voting and Logout automatically</a>
+                <a href="canceled.html" class="btn btn-link text-danger cancel-link">Cancel Voting and Logout Automatically</a>
             </div>
 
         </form>
     </div>
-    </script>
-</body>
 
+    <script>
+        const cards = document.querySelectorAll('.candidate-card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const radio = card.querySelector('.form-check-input');
+                const category = card.dataset.category;
+
+                document.querySelectorAll(`.candidate-card[data-category="${category}"]`).forEach(c => {
+                    c.classList.remove('selected');
+                });
+
+                radio.checked = true;
+                card.classList.add('selected');
+            });
+        });
+    </script>
+
+</body>
 </html>

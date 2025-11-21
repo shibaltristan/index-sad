@@ -8,7 +8,6 @@
 
     <style>
         body {
-            /* Flexbox for perfect centering (already correct) */
             background-image: url('srcbackround.jpg');
             background-size: cover;
             background-repeat: no-repeat;
@@ -21,16 +20,14 @@
         }
 
         .login-card {
-            /* Applied modern card styling, consistent with login pages */
             background-color: #fff;
             border-radius: 12px; 
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(6, 182, 212, 0.1); 
-            max-width: 400px; /* Consistent width */
+            max-width: 400px;
         }
 
         .card-header-custom {
-            /* Background color matching the student login pages */
             background: linear-gradient(135deg, #2563eb, #06b6d4); 
             color: white;
             padding: 20px;
@@ -38,7 +35,6 @@
         }
 
         .form-section {
-            /* Section to hold the department buttons */
             padding: 25px 30px 30px 30px; 
         }
     </style>
@@ -49,8 +45,13 @@
         <div class="login-card mx-auto">
             
             <div class="card-header-custom">
-                <img src="srclogo.webp" alt="School Logo" style="max-width: 80px; margin-bottom: 10px;"
-                    class="d-block mx-auto rounded-circle border border-3 border-white">
+
+                <a href="adminlogin.html">
+                    <img src="srclogo.webp" alt="School Logo" 
+                        style="max-width: 80px; margin-bottom: 10px;"
+                        class="d-block mx-auto rounded-circle border border-3 border-white">
+                </a>
+
                 <h4 class="mb-0 fw-light">Sta. Rita College Voting System</h4>
                 <h3 class="fw-bold mb-0">WELCOME</h3>
             </div>

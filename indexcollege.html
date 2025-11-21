@@ -8,7 +8,6 @@
 
     <style>
         body {
-            /* Flexbox for perfect centering */
             background-image: url('srcbackround.jpg');
             background-size: cover;
             background-repeat: no-repeat;
@@ -21,17 +20,14 @@
         }
 
         .login-card {
-            /* Renamed container for clarity and increased padding */
             background-color: #fff;
             border-radius: 12px; 
-            overflow: hidden; /* To contain the header background */
-            /* New shadow with a subtle blue tint */
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(6, 182, 212, 0.1); 
-            max-width: 400px; /* Slightly wider for a bolder look */
+            max-width: 400px;
         }
 
         .card-header-custom {
-            /* Background color matching a modern blue/cyan gradient idea */
             background: linear-gradient(135deg, #2563eb, #06b6d4); 
             color: white;
             padding: 20px;
@@ -39,7 +35,7 @@
         }
 
         .form-section {
-            padding: 25px 30px 20px 30px; /* Padding for the form area */
+            padding: 25px 30px 20px 30px;
         }
     </style>
 </head>
@@ -63,13 +59,13 @@
                     <div class="mb-3">
                         <label for="usernameInput" class="form-label visually-hidden">Username</label>
                         <input type="text" id="usernameInput" name="username" class="form-control form-control-lg" 
-                            placeholder="Enter Student ID / Username" required/>
+                            placeholder="Username" required/>
                     </div>
                     
                     <div class="mb-4">
                         <label for="passwordInput" class="form-label visually-hidden">Password</label>
                         <input type="password" id="passwordInput" name="password" class="form-control form-control-lg" 
-                            placeholder="Enter Password" required/>
+                            placeholder="Password" required/>
                     </div>
                     
                     <a href="homepage.html" class="btn btn-primary w-100 mt-2 btn-lg shadow">Login</a>
