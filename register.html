@@ -21,14 +21,14 @@
 
         .login-card {
             background-color: #fff;
-            border-radius: 12px; 
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(6, 182, 212, 0.1); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(6, 182, 212, 0.1);
             max-width: 400px;
         }
 
         .card-header-custom {
-            background: linear-gradient(135deg, #2563eb, #06b6d4); 
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
             color: white;
             padding: 20px;
             text-align: center;
@@ -41,60 +41,64 @@
 </head>
 
 <body>
-    <div class="container"> 
+    <div class="container">
         <div class="login-card mx-auto">
-            
+
             <div class="card-header-custom">
                 <img src="srclogo.webp" alt="School Logo" style="max-width: 80px; margin-bottom: 10px;"
                     class="d-block mx-auto rounded-circle border border-3 border-white">
                 <h4 class="mb-0 fw-light">Sta. Rita College Voting System</h4>
                 <h3 class="fw-bold mb-0">STUDENT REGISTRATION</h3>
             </div>
-            
+
             <div class="form-section">
                 <h5 class="text-center mb-4 text-muted">Create your voting account</h5>
 
                 <form action="register_handler.php" method="post">
-                    
+
                     <div class="mb-3">
                         <label for="studentID" class="form-label visually-hidden">Student ID Number</label>
-                        <input type="text" id="studentID" name="student_id" class="form-control" 
-                            placeholder="Enter your Student ID Number" required>
+                        <input type="text" id="studentID" name="student_id" class="form-control"
+                            placeholder="Enter your Student ID Number">
                     </div>
 
                     <div class="mb-3">
                         <label for="emailInput" class="form-label visually-hidden">Email</label>
-                        <input type="email" id="emailInput" name="email" class="form-control" 
-                            placeholder="Enter your School Email" required>
+                        <input type="email" id="emailInput" name="email" class="form-control"
+                            placeholder="Enter your School Email">
                     </div>
 
                     <div class="mb-3">
-                        <label for="usernameInput" class="form-label visually-hidden">Username</label>
-                        <input type="text" id="usernameInput" name="username" class="form-control" 
-                            placeholder="Choose a Username" required>
+                        <label for="departmentSelect" class="form-label visually-hidden">Department</label>
+                        <select id="departmentSelect" name="department" class="form-select">
+                            <option value="" disabled selected>Select your Department</option>
+                            <option value="College Department">College Department</option>
+                            <option value="High School Department">High School Department</option>
+                        </select>
                     </div>
-
                     <div class="mb-3">
                         <label for="passwordInput" class="form-label visually-hidden">Password</label>
-                        <input type="password" id="passwordInput" name="password" class="form-control" 
-                            placeholder="Choose a Password" required>
+                        <input type="password" id="passwordInput" name="password" class="form-control"
+                            placeholder="Choose a Password">
                     </div>
 
                     <div class="mb-4">
                         <label for="confirmPassword" class="form-label visually-hidden">Confirm Password</label>
-                        <input type="password" id="confirmPassword" name="confirm_password" class="form-control" 
-                            placeholder="Confirm Password" required>
+                        <input type="password" id="confirmPassword" name="confirm_password" class="form-control"
+                            placeholder="Confirm Password">
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary w-100 btn-lg shadow">Register</button>
-                    
+
+                    <a href="saksesregister.html" class="btn btn-primary w-100 btn-lg shadow" role="button">
+                        Register
+                    </a>
+
                 </form>
 
                 <p class="text-center mt-4 small">
-                    <span class="text-muted">Already have an account?</span><br> 
-                    <a href="index.html" class="fw-bold">Login here</a>
+                    <span class="text-muted">Already have an account?</span><br>
+                    <a href="indexuser.html" class="fw-bold">Login here</a>
                 </p>
-                
+
             </div>
         </div>
     </div>
